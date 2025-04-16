@@ -1,0 +1,26 @@
+{
+  "name": "admin-cron-job",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "report:daily":"bun run src/services/daily.report.ts",
+    "report:monthly":"bun run src/services/monthly.report.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.5.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ioredis": "^5.6.1",
+    "pg": "^8.14.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.22"
+  }
+}
