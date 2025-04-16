@@ -32,8 +32,8 @@ export const getTopProducts = async (report: Report) => {
 
   for (const [idStr, { totalQuantity, totalAmount }] of Object.entries(topProducts)) {
     const top = topRepository.create({
-      report : { id: report.id },
-      product: { id: parseInt(idStr) },
+      report : { id: report.id } as Report,
+      product: { id: parseInt(idStr) } as Product,
       totalQuantity: totalQuantity,
       totalAmount: totalAmount,
     });
